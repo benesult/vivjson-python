@@ -20,7 +20,7 @@ limitations under the License.
 """
 
 __author__ = 'Fumiaki Motegi <motegi@benesult.com>'
-__date__ = '2025-03-25'
+__date__ = '2025-04-04'
 
 from typing import Optional
 
@@ -80,7 +80,7 @@ class Config:  # pylint: disable=R0902, R0904
                                       of "for", "while", and so on
     """
     SPEC_VERSION = '1.0.0'
-    INTERPRETER_VERSION = '1.0.0'
+    INTERPRETER_VERSION = '1.0.1'
     ENABLE_STDERR_DEFAULT = False
     ENABLE_TAG_DETAIL_DEFAULT = False
     ENABLE_ONLY_JSON_DEFAULT = False

@@ -16,6 +16,13 @@
 - Improve error messages.
 
 
+## [1.0.1] - 2025-04-04
+
+### Fixed
+
+- Skip the particular line-break within if-elseif-else statements.
+
+
 ## [1.0.0] - 2025-04-02
 
 ### Added

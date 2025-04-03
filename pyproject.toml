@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "vivjson"
-version = "1.0.0"  # https://packaging.python.org/en/latest/discussions/versioning/
+version = "1.0.1"  # https://packaging.python.org/en/latest/discussions/versioning/
 description = "VivJson that is the embedded scripting language and the extension of JSON."
 readme = "README.md"
 requires-python = ">=3.9"
