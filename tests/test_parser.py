@@ -25,7 +25,7 @@ limitations under the License.
 """
 
 __author__ = 'Fumiaki Motegi <motegi@benesult.com>'
-__date__ = '2025-04-01'
+__date__ = '2025-04-04'
 
 # pylint: disable=C0301, E0401, R0801, C0123
 
@@ -101,6 +101,8 @@ from vivjson.config import Config
         ('function (a) {return}', 'a', None, True),  # Identifier is needed after function's modifier.
         ('a = 0\n\nif\n\n(\n\ntrue\n\n)\n\n{\n\na = 3\n\n}', 'a', 3, False),
         ('a = 0 if (true) {}', 'a', 0, False),
+        ('a = -10, b = if (a < 0) {:= "-"} elseif (a == 0) {:= "0"} else {:= "+"}', 'b', '-', False),
+        ('a = 1, b = if \n (a == 0) \n {:= "zero"} \n elseif \n (a == 1) \n {:= "one"} \n elseif \n (a == 2) \n {:= "two"} \n else \n {:= "other"}', 'b', 'one', False),
         ('if () { a = 3 }', 'a', None, True),  # Condition is necessary.
         ('if (true), a = 3', 'a', None, True),  # Block (operations) is necessary.
         ('if (true, a = 3)', 'a', None, True),  # Block (operations) is necessary.

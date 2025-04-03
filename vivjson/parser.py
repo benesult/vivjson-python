@@ -119,7 +119,7 @@ limitations under the License.
 """
 
 __author__ = 'Fumiaki Motegi <motegi@benesult.com>'
-__date__ = '2025-04-01'
+__date__ = '2025-04-04'
 
 # pylint: disable=C0302, R0903
 
@@ -808,6 +808,7 @@ class Parser:  # pylint: disable=R0902
 
         # elseif
         while True:
+            self._skip_new_lines()  # [ <nl>+ ]
             condition, block = \
                 self._make_call_condition_and_operations(Token.Type.ELSEIF)
             if condition is None or block is None:
@@ -816,6 +817,7 @@ class Parser:  # pylint: disable=R0902
             arguments.append(block)
 
         # else
+        self._skip_new_lines()  # [ <nl>+ ]
         condition, block = \
             self._make_call_condition_and_operations(Token.Type.ELSE)
         if block is not None:
