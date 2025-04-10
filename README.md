@@ -44,7 +44,8 @@ value, error_message = Viv.run(data, 'return(qux)')
 print(value)  # None
 print(type(value))  # <class 'NoneType'>
 # The existence can be checked with "in" operator.
-# Note that "." of the right hand side indicates the whole scope.
+# Note that "." of the right hand side represents this block
+# (this local scope).
 # "." as the operand is permitted only the right hand side of
 # "in" operator.
 # Carefully, it can't check about the variable whose prefix is "_".
