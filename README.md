@@ -201,11 +201,11 @@ It is suitable if running times is only one.
             | Viv                |
             |                    |
             |  +--------------+  |
-Java's      |  |              |  |     Java's
+Python's    |  |              |  |     Python's
 value   ------>| run          |------> value
             |  |              |  |       or
 JSON's      |  |              |  |     JSON's
-value   ------>|              |  |     value 
+value   ------>|              |  |     value
             |  |              |  |
 Script      |  |              |  |
 code    ------>|              |  |
@@ -230,22 +230,22 @@ It is suitable that same running is repeated.
 Because parsing is done only one time.
 
 ```
-            +--------------------+              +--------------------+
-            |                    |              |                    |
-            | Viv                |              | Viv                |
-            |                    |              |                    |
-            |  +--------------+  |  Parsed      |  +--------------+  |
-Java's      |  |              |  |  value/code  |  |              |  |     Java's
-value   ------>| parse,       |------------------->| run          |------> value
-            |  | parse_file,  |  |              |  |              |  |       or
-JSON's      |  | parse_text   |  |  Additional  |  |              |  |     JSON's
-value   ------>|              |  |  Java/JSON's |  |              |  |     value 
-            |  |              |  |  value   ------>|              |  |
-Script      |  |              |  |              |  |              |  |
-code    ------>|              |  |  Additional --->|              |  |
-            |  +--------------+  |  Script code |  +--------------+  |
-            |                    |              |                    |
-            +--------------------+              +--------------------+
+            +--------------------+                +--------------------+
+            |                    |                |                    |
+            | Viv                |                | Viv                |
+            |                    |                |                    |
+            |  +--------------+  |  Parsed        |  +--------------+  |
+Python's    |  |              |  |  value/code    |  |              |  |     Python's
+value   ------>| parse,       |--------------------->| run          |------> value
+            |  | parse_file,  |  |                |  |              |  |       or
+JSON's      |  | parse_text   |  |  Additional    |  |              |  |     JSON's
+value   ------>|              |  |  Python/JSON's |  |              |  |     value
+            |  |              |  |  value   -------->|              |  |
+Script      |  |              |  |                |  |              |  |
+code    ------>|              |  |  Additional ----->|              |  |
+            |  +--------------+  |  Script code   |  +--------------+  |
+            |                    |                |                    |
+            +--------------------+                +--------------------+
 ```
 
 For example,
@@ -264,26 +264,25 @@ It is suitable that same running is repeated.
 Because parsing and initialization are done only one time.
 
 ```
-            +---------------------+              +--------------------+
-            |                     |              |                    |
-            | Viv                 |              | Viv                |
-            |                     |              |                    |
-            |  +---------------+  |              |  +--------------+  |
-Java's      |  |               |  |  Instance    |  |              |  |     Java's
-value   ------>| make_instance |------------------->| run          |------> value
-            |  |               |  |              |  |              |  |       or
-JSON's      |  |               |  |  Additional  |  |              |  |     JSON's
-value   ------>|               |  |  Java/JSON's |  |              |  |     value 
-            |  |               |  |  value   ------>|              |  |
-Script      |  |               |  |              |  |              |  |
-code    ------>|               |  |  Additional --->|              |  |
-            |  +---------------+  |  Script code |  |              |  |
-            |                     |              |  |              |  |
-            +---------------------+  Calling ------>|              |  |
-                                     Method      |  +--------------+  |
-                                                 |                    |
-                                                 +--------------------+
-
+            +---------------------+                +--------------------+
+            |                     |                |                    |
+            | Viv                 |                | Viv                |
+            |                     |                |                    |
+            |  +---------------+  |                |  +--------------+  |
+Python's    |  |               |  |  Instance      |  |              |  |     Python's
+value   ------>| make_instance |--------------------->| run          |------> value
+            |  |               |  |                |  |              |  |       or
+JSON's      |  |               |  |  Additional    |  |              |  |     JSON's
+value   ------>|               |  |  Python/JSON's |  |              |  |     value
+            |  |               |  |  value   -------->|              |  |
+Script      |  |               |  |                |  |              |  |
+code    ------>|               |  |  Additional ----->|              |  |
+            |  +---------------+  |  Script code   |  |              |  |
+            |                     |                |  |              |  |
+            +---------------------+  Calling -------->|              |  |
+                                     Method        |  +--------------+  |
+                                                   |                    |
+                                                   +--------------------+
 ```
 
 For example,
